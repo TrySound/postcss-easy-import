@@ -1,0 +1,40 @@
+{
+  "name": "postcss-easy-import",
+  "version": "0.0.0",
+  "description": "PostCSS plugin to inline @import rules content with sassy features",
+  "keywords": [
+    "postcss",
+    "css",
+    "postcss-plugin",
+    "import",
+    "glob",
+    "partial"
+  ],
+  "author": "Bogdan Chadkin <trysound@yandex.ru>",
+  "license": "MIT",
+  "repository": "TrySound/postcss-easy-import",
+  "bugs": {
+    "url": "https://github.com/TrySound/postcss-easy-import/issues"
+  },
+  "homepage": "https://github.com/TrySound/postcss-easy-import",
+  "dependencies": {
+    "postcss": "^5.0.13",
+    "postcss-import": "^8.0.1",
+    "resolve": "^1.1.7"
+  },
+  "devDependencies": {
+    "ava": "^0.9.1",
+    "eslint": "^1.10.3",
+    "eslint-config-postcss": "^1.0.0"
+  },
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "pretest": "eslint .",
+    "test": "ava"
+  },
+  "eslintConfig": {
+    "extends": "eslint-config-postcss/es5"
+  }
+}
