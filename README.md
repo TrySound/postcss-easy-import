@@ -1,6 +1,6 @@
-# PostCSS Easy Import [![Build Status][ci-img]][ci]
+# postcss-easy-import [![Build Status][ci-img]][ci]
 
-[PostCSS] plugin to inline @import rules content with sassy features.
+[PostCSS] plugin to inline @import rules content with extra features.
 
 [PostCSS]: https://github.com/postcss/postcss
 [ci-img]:  https://travis-ci.org/TrySound/postcss-easy-import.svg

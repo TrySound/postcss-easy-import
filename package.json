@@ -1,7 +1,7 @@
 {
   "name": "postcss-easy-import",
   "version": "0.0.0",
-  "description": "PostCSS plugin to inline @import rules content with sassy features",
+  "description": "PostCSS plugin to inline @import rules content with extra features",
   "keywords": [
     "postcss",
     "css",
@@ -18,6 +18,9 @@
   },
   "homepage": "https://github.com/TrySound/postcss-easy-import",
   "dependencies": {
+    "globby": "^4.0.0",
+    "object-assign": "^4.0.1",
+    "pify": "^2.3.0",
     "postcss": "^5.0.13",
     "postcss-import": "^8.0.1",
     "resolve": "^1.1.7"
