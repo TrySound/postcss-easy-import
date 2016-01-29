@@ -34,7 +34,7 @@ module.exports = postcss.plugin('postcss-easy-import', function (opts) {
     ) {
         throw Error(
             'postcss-easy-import: ' +
-            '\'extensions\' options should be string or array of strings'
+            '\'extensions\' option should be string or array of strings'
         );
     }
 

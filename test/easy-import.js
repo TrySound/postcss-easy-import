@@ -27,7 +27,7 @@ test(`should not fail on correct 'prefix'`, t => {
 
 test(`should fail on incorrect 'extensions'`, t => {
     const error = msg(
-        `'extensions' options should be string or array of strings`
+        `'extensions' option should be string or array of strings`
     );
 
     t.throws(() => {
