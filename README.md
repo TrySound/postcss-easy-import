@@ -17,18 +17,18 @@ See [PostCSS] docs for examples for your environment.
 
 ## Options
 
-This plugin is [postcss-import] extension which introduce own `resolve` option.
+This plugin is a [postcss-import] extension which introduces its own `resolve` option.
 
 ### prefix
 
 Type: `false` or `string`
 Default: `false`
 
-Let to use partial-like importing with prefix before filename.
+Allows partial-like importing with a prefix before the filename.
 
 ```css
 @import 'modules/partial.css';
-/* will be imported modules/_partial.css */
+/* will import modules/_partial.css */
 ```
 
 ### extensions
@@ -43,7 +43,7 @@ Defines file extensions which will be looked for.
 Type: `boolean`
 Default: `false`
 
-Enable resolver which do not support modules and let to use glob magic in `@import`.
+Disables module lookup and imports modules based on a glob pattern.
 
 # License
 
