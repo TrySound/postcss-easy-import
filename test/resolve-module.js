@@ -4,38 +4,84 @@ import resolveModule from '../lib/resolve-module.js';
 
 const resolve = p => path.resolve('fixtures/module', p);
 
-test(`should resolve 'index'`, t => {
+test('should resolve file (css)', t => {
     return resolveModule('index', path.resolve('fixtures/module'), {
-        extensions: ['.css'],
-        path: []
+        extensions: ['.css', '.scss']
     }).then(result => {
         t.is(result, resolve('index.css'));
     });
 });
 
-test(`should resolve 'index.css'`, t => {
+test('should resolve file (scss)', t => {
+    return resolveModule('index', path.resolve('fixtures/module'), {
+        extensions: ['.scss', '.css']
+    }).then(result => {
+        t.is(result, resolve('index.scss'));
+    });
+});
+
+test('should resolve file with extension', t => {
     return resolveModule('index.css', path.resolve('fixtures/module'), {
-        extensions: ['.css'],
-        path: []
+        extensions: ['.scss', '.css']
     }).then(result => {
         t.is(result, resolve('index.css'));
     });
 });
 
-test(`should resolve main field`, t => {
+test('should resolve local module (css)', t => {
     return resolveModule('module-1', path.resolve('fixtures/module'), {
-        extensions: ['.css', '.scss'],
-        path: []
+        extensions: ['.css', '.scss']
     }).then(result => {
-        t.is(result, resolve('module-1/main.scss'));
+        t.is(result, resolve('module-1/main.css'));
     });
 });
 
-test(`should resolve main field with wrong extension`, t => {
+test('should resolve local module (index.scss)', t => {
     return resolveModule('module-2', path.resolve('fixtures/module'), {
-        extensions: ['.css', '.scss'],
-        path: []
+        extensions: ['.scss', '.css']
     }).then(result => {
-        t.is(result, resolve('module-2/index.css'));
+        t.is(result, resolve('module-2/index.scss'));
+    });
+});
+
+test('should resolve file via path', t => {
+    return resolveModule('foo', path.resolve('fixtures/module'), {
+        extensions: ['.scss', '.css'],
+        path: [
+            resolve('path-1'),
+            resolve('path-2')
+        ]
+    }).then(result => {
+        t.is(result, resolve('path-1/foo.css'));
+    });
+});
+
+test('should resolve prefixed file', t => {
+    return resolveModule('bar', path.resolve('fixtures/module'), {
+        extensions: ['.scss', '.css'],
+        prefix: '_'
+    }).then(result => {
+        t.is(result, resolve('_bar.css'));
+    });
+});
+
+test('should resolve prefixed local module', t => {
+    return resolveModule('module-3', path.resolve('fixtures/module'), {
+        extensions: ['.scss', '.css'],
+        prefix: '_'
+    }).then(result => {
+        t.is(result, resolve('_module-3/index.scss'));
+    });
+});
+
+test('should resolve prefixed file via path', t => {
+    return resolveModule('foo', path.resolve('fixtures/module'), {
+        extensions: ['.scss', '.css'],
+        prefix: '_',
+        path: [
+            resolve('path-1')
+        ]
+    }).then(result => {
+        t.is(result, resolve('path-1/_foo.css'));
     });
 });
