@@ -34,7 +34,6 @@
     "index.js"
   ],
   "scripts": {
-    "pretest": "eslint .",
     "test": "ava test/resolve-module.js --verbose"
   },
   "eslintConfig": {
