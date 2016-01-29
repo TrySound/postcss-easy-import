@@ -35,7 +35,7 @@
   ],
   "scripts": {
     "pretest": "eslint .",
-    "test": "ava"
+    "test": "ava test/resolve-module.js --verbose"
   },
   "eslintConfig": {
     "extends": "eslint-config-postcss/es5"
