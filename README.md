@@ -13,6 +13,8 @@
 postcss([ require('postcss-easy-import') ])
 ```
 
+See [PostCSS] docs for examples for your environment.
+
 ## Options
 
 This plugin is [postcss-import] extension which introduce own `resolve` option.
@@ -42,8 +44,6 @@ Type: `boolean`
 Default: `false`
 
 Enable resolver which do not support modules and let to use glob magic in `@import`.
-
-See [PostCSS] docs for examples for your environment.
 
 # License
 
