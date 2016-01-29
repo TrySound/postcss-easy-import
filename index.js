@@ -6,7 +6,7 @@ var resolveModule = require('./lib/resolve-module.js');
 
 module.exports = postcss.plugin('postcss-easy-import', function (opts) {
     opts = assign({
-        prefix: '_',
+        prefix: false,
         extensions: '.css',
         glob: false
     }, opts);
