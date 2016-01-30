@@ -31,7 +31,8 @@
     "eslint-config-postcss": "^1.0.0"
   },
   "files": [
-    "index.js"
+    "index.js",
+    "lib"
   ],
   "scripts": {
     "pretest": "eslint .",
