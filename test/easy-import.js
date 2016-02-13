@@ -3,15 +3,15 @@ import easyImport from '../';
 
 const msg = err => 'postcss-easy-import: ' + err;
 
-test(`should fail on incorrect 'prefix'`, t => {
+test('should fail on incorrect \'prefix\'', t => {
     t.throws(() => {
         easyImport({
             prefix: 1
         });
-    }, msg(`'prefix' option should be a string or false`));
+    }, msg('\'prefix\' option should be a string or false'));
 });
 
-test(`should not fail on correct 'prefix'`, t => {
+test('should not fail on correct \'prefix\'', t => {
     t.doesNotThrow(() => {
         easyImport({
             prefix: 'some string'
@@ -25,9 +25,9 @@ test(`should not fail on correct 'prefix'`, t => {
     });
 });
 
-test(`should fail on incorrect 'extensions'`, t => {
+test('should fail on incorrect \'extensions\'', t => {
     const error = msg(
-        `'extensions' option should be string or array of strings`
+        '\'extensions\' option should be string or array of strings'
     );
 
     t.throws(() => {
@@ -55,7 +55,7 @@ test(`should fail on incorrect 'extensions'`, t => {
     }, error);
 });
 
-test(`should not fail on correct 'extensions'`, t => {
+test('should not fail on correct \'extensions\'', t => {
     t.doesNotThrow(() => {
         easyImport({
             extensions: '.css'
