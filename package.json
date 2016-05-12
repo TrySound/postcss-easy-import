@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/TrySound/postcss-easy-import",
   "dependencies": {
+    "is-glob": "^2.0.1",
     "globby": "^6.1.0",
     "object-assign": "^4.0.1",
     "pify": "^2.3.0",
