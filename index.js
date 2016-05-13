@@ -13,10 +13,12 @@ module.exports = postcss.plugin('postcss-easy-import', function (opts) {
         dynamicResolve: false
     }, opts);
 
-    if ( opts.dynamicResolve ) {
+    if ( opts.glob ) {
+        opts.resolve = resolveGlob;
+    } else if ( opts.dynamicResolve ) {
         opts.resolve = resolveDynamic;
     } else {
-        opts.resolve = opts.glob ? resolveGlob : resolveModule;
+        opts.resolve = resolveModule;
     }
 
     if (opts.prefix && typeof opts.prefix !== 'string') {
