@@ -36,7 +36,7 @@ test('should resolve local module (css)', t => {
     });
 });
 
-test.only('should resolve local module (index.scss)', t => {
+test('should resolve local module (index.scss)', t => {
     return resolveModule('module-2', path.resolve('fixtures/module'), {
         extensions: ['.scss', '.css']
     }).then(result => {
