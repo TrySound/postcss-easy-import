@@ -12,13 +12,13 @@ test('should fail on incorrect \'prefix\'', t => {
 });
 
 test('should not fail on correct \'prefix\'', t => {
-    t.doesNotThrow(() => {
+    t.notThrows(() => {
         easyImport({
             prefix: 'some string'
         });
     });
 
-    t.doesNotThrow(() => {
+    t.notThrows(() => {
         easyImport({
             prefix: false
         });
@@ -56,13 +56,13 @@ test('should fail on incorrect \'extensions\'', t => {
 });
 
 test('should not fail on correct \'extensions\'', t => {
-    t.doesNotThrow(() => {
+    t.notThrows(() => {
         easyImport({
             extensions: '.css'
         });
     });
 
-    t.doesNotThrow(() => {
+    t.notThrows(() => {
         easyImport({
             extensions: ['.css', '.scss']
         });

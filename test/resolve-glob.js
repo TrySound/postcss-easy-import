@@ -9,7 +9,7 @@ test('should resolve relative globs', t => {
         extensions: ['.css', '.scss'],
         path: []
     }).then(result => {
-        t.same(result, [
+        t.deepEqual(result, [
             'relative.bar.scss',
             'relative.foo.css'
         ].map(resolve));
@@ -21,7 +21,7 @@ test('should resolve globs without magic and extension', t => {
         extensions: ['.css', '.scss'],
         path: []
     }).then(result => {
-        t.same(result, [
+        t.deepEqual(result, [
             'ext.css',
             'ext.scss'
         ].map(resolve));
@@ -36,7 +36,7 @@ test('should resolve globs in paths', t => {
             'path-2'
         ].map(resolve)
     }).then(result => {
-        t.same(result, [
+        t.deepEqual(result, [
             'path.0.css',
             'path-1/path.1-1.css',
             'path-1/path.1.3.scss',
@@ -64,7 +64,7 @@ test('should resolve prefix', t => {
         path: [],
         prefix: '_'
     }).then(result => {
-        t.same(result, [
+        t.deepEqual(result, [
             'prefixed/_prefix.foo.css',
             'prefixed/_prefix.foo.scss'
         ].map(resolve));
