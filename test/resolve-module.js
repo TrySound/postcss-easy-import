@@ -85,3 +85,24 @@ test('should resolve prefixed file via path', t => {
         t.is(result, resolve('path-1/_foo.css'));
     });
 });
+
+test('should fallback and resolve non-prefix file if only match', t => {
+    return resolveModule('path-2/foo', path.resolve('fixtures/module'), {
+        extensions: ['.scss', '.css'],
+        prefix: '_'
+    }).then(result => {
+        t.is(result, resolve('path-2/foo.css'));
+    });
+});
+
+test('should fallback and resolve non-prefix file via path', t => {
+    return resolveModule('foo', path.resolve('fixtures/module'), {
+        extensions: ['.scss', '.css'],
+        prefix: '_',
+        path: [
+            resolve('path-2')
+        ]
+    }).then(result => {
+        t.is(result, resolve('path-2/foo.css'));
+    });
+});

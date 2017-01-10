@@ -58,7 +58,7 @@ test('should not resolve globs with empty extensions', t => {
     });
 });
 
-test('should resolve prefix', t => {
+test('should resolve prefixed files in favour of non-prefixed', t => {
     return resolveGlob('prefixed/prefix.*', path.resolve('fixtures/glob'), {
         extensions: ['.css', '.scss'],
         path: [],
@@ -67,6 +67,40 @@ test('should resolve prefix', t => {
         t.deepEqual(result, [
             'prefixed/_prefix.foo.css',
             'prefixed/_prefix.foo.scss'
+        ].map(resolve));
+    });
+});
+
+test('should resolve non-prefixed files with the same name if prefixed cannot be found', t => { // eslint-disable-line max-len
+    return resolveGlob('prefixed/without/*.*', path.resolve('fixtures/glob'), {
+        extensions: ['.css', '.scss'],
+        path: [],
+        prefix: '_'
+    }).then(result => {
+        t.deepEqual(result, [
+            'prefixed/without/_baz.css',
+            'prefixed/without/_foo.css',
+            'prefixed/without/_z.css',
+            'prefixed/without/bar.css',
+            'prefixed/without/file.css'
+        ].map(resolve));
+    });
+});
+
+test('should resolve every match if prefix is not defined', t => { // eslint-disable-line max-len
+    return resolveGlob('prefixed/without/*.*', path.resolve('fixtures/glob'), {
+        extensions: ['.css', '.scss'],
+        path: []
+    }).then(result => {
+        t.deepEqual(result, [
+            'prefixed/without/_baz.css',
+            'prefixed/without/_foo.css',
+            'prefixed/without/_z.css',
+            'prefixed/without/bar.css',
+            'prefixed/without/baz.css',
+            'prefixed/without/file.css',
+            'prefixed/without/foo.css',
+            'prefixed/without/z.css'
         ].map(resolve));
     });
 });
