@@ -42,6 +42,16 @@ Allows partial-like importing with a prefix before the filename.
 /* will import modules/_partial.css */
 ```
 
+Prefixed versions are always favoured. Otherwise the non-prefix version is used:
+
+```
+├── _baz.css
+├── baz.css
+├── bar.css
+```
+
+The matched files would be `['_baz.css', 'bar.css']`.
+
 ### `extensions`
 
 Type: `array` or `string`
