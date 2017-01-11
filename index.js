@@ -2,8 +2,8 @@ var postcss = require('postcss');
 var assign = require('object-assign');
 var postcssImport = require('postcss-import');
 var isGlob = require('is-glob');
-var resolveGlob = require('./lib/resolve-glob.js');
-var resolveModule = require('./lib/resolve-module.js');
+var resolveGlob = require('./lib/resolve-glob');
+var resolveModule = require('./lib/resolve-module');
 
 function resolve(id) {
     var resolver = isGlob(id) ? resolveGlob : resolveModule;
