@@ -15,11 +15,22 @@ postcss([ require('postcss-easy-import') ])
 
 See [PostCSS] docs for examples for your environment.
 
+## Resolving files with globs
+
+The path to the file will be checked and if it contains a glob it will be used
+to locate it. These can be mixed and matched with normal module paths:
+
+```css
+@import "suitcss-utils-display"; /* node_modules */
+@import "./theme.css"; /* relative path */
+@import "./components/*.css"; /* glob */
+```
+
 ## Options
 
 This plugin is a [postcss-import] extension which introduces its own `resolve` option.
 
-### prefix
+### `prefix`
 
 Type: `false` or `string`
 Default: `false`
@@ -31,19 +42,12 @@ Allows partial-like importing with a prefix before the filename.
 /* will import modules/_partial.css */
 ```
 
-### extensions
+### `extensions`
 
 Type: `array` or `string`
 Default: `.css`
 
 Defines file extensions which will be looked for.
-
-### glob
-
-Type: `boolean`
-Default: `false`
-
-Disables module lookup and imports modules based on a glob pattern.
 
 # License
 

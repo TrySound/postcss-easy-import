@@ -1,17 +1,22 @@
 var postcss = require('postcss');
 var assign = require('object-assign');
 var postcssImport = require('postcss-import');
+var isGlob = require('is-glob');
 var resolveGlob = require('./lib/resolve-glob.js');
 var resolveModule = require('./lib/resolve-module.js');
+
+function resolve(id) {
+    var resolver = isGlob(id) ? resolveGlob : resolveModule;
+    return resolver.apply(null, arguments);
+}
 
 module.exports = postcss.plugin('postcss-easy-import', function (opts) {
     opts = assign({
         prefix: false,
-        extensions: '.css',
-        glob: false
+        extensions: '.css'
     }, opts);
 
-    opts.resolve = opts.glob ? resolveGlob : resolveModule;
+    opts.resolve = resolve;
 
     if (opts.prefix && typeof opts.prefix !== 'string') {
         throw Error(
