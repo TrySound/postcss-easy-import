@@ -24,7 +24,7 @@
     "object-assign": "^4.0.1",
     "pify": "^2.3.0",
     "postcss": "^5.0.15",
-    "postcss-import": "^8.0.2",
+    "postcss-import": "^9.1.0",
     "resolve": "^1.1.7"
   },
   "devDependencies": {
