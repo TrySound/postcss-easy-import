@@ -1,5 +1,7 @@
 ### HEAD
 
+### 2.0.0
+
 * Remove `glob` option and infer type of from the import path. Allows a mixture
   of glob and module imports to be used - ([#14](https://github.com/TrySound/postcss-easy-import/pull/14))
 * When `prefix` is set resolve non-prefixed version of a file if that is the only match, otherwise

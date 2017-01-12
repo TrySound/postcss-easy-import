@@ -1,6 +1,6 @@
 {
   "name": "postcss-easy-import",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "PostCSS plugin to inline @import rules content with extra features",
   "keywords": [
     "postcss",
@@ -11,6 +11,11 @@
     "partial"
   ],
   "author": "Bogdan Chadkin <trysound@yandex.ru>",
+  "contributors": [{
+    "name": "Simon Smith",
+    "url": "https://simonsmith.io",
+    "email": "me@simonsmith.io"
+  }],
   "license": "MIT",
   "repository": "TrySound/postcss-easy-import",
   "bugs": {
