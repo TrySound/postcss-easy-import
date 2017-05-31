@@ -105,3 +105,12 @@ test('should handle glob and module imports together', t => {
         t
     );
 });
+
+test('should import glob from node_modules', t => {
+    return preprocess(
+        '@import "css.globtest/*.css"',
+        '.bar {\n  color: green;\n}\n.foo {\n  color: tomato;\n}',
+        {},
+        t
+    );
+});
