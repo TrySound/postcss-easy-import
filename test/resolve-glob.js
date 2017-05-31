@@ -104,3 +104,14 @@ test('should resolve every match if prefix is not defined', t => { // eslint-dis
         ].map(resolve));
     });
 });
+
+test('should resolve globs in node_modules', t => {
+    return resolveGlob('css.globtest/*.css', path.resolve('fixtures/glob'), {
+        extensions: ['.css', '.scss'],
+        path: []
+    }).then(result => {
+        t.deepEqual(result, [
+            path.resolve('node_modules/css.globtest/glob1.css')
+        ]);
+    });
+});
