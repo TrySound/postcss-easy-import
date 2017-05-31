@@ -5,6 +5,9 @@ import postcss from 'postcss';
 
 const msg = err => 'postcss-easy-import: ' + err;
 
+// for tests to work with ava >=0.18
+process.chdir(__dirname);
+
 function preprocess(input, output, opts, t) {
     return postcss([ easyImport(opts) ]).process(input)
         .then(result => {
