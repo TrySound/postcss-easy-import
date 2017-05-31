@@ -11,11 +11,13 @@
     "partial"
   ],
   "author": "Bogdan Chadkin <trysound@yandex.ru>",
-  "contributors": [{
-    "name": "Simon Smith",
-    "url": "https://simonsmith.io",
-    "email": "me@simonsmith.io"
-  }],
+  "contributors": [
+    {
+      "name": "Simon Smith",
+      "url": "https://simonsmith.io",
+      "email": "me@simonsmith.io"
+    }
+  ],
   "license": "MIT",
   "repository": "TrySound/postcss-easy-import",
   "bugs": {
@@ -33,7 +35,7 @@
     "resolve": "^1.1.7"
   },
   "devDependencies": {
-    "ava": "^0.16.0",
+    "ava": "^0.19.1",
     "eslint": "^3.11.1",
     "eslint-config-postcss": "^2.0.0"
   },

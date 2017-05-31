@@ -4,6 +4,9 @@ import resolveGlob from '../lib/resolve-glob.js';
 
 const resolve = p => path.resolve('fixtures/glob', p);
 
+// for tests to work with ava >=0.18
+process.chdir(__dirname);
+
 test('should resolve relative globs', t => {
     return resolveGlob('relative.*', path.resolve('fixtures/glob'), {
         extensions: ['.css', '.scss'],

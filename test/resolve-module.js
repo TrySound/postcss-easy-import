@@ -4,6 +4,9 @@ import resolveModule from '../lib/resolve-module.js';
 
 const resolve = p => path.resolve('fixtures/module', p);
 
+// for tests to work with ava >=0.18
+process.chdir(__dirname);
+
 test('should resolve file (css)', t => {
     return resolveModule('index', path.resolve('fixtures/module'), {
         extensions: ['.css', '.scss']
