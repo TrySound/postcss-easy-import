@@ -33,7 +33,7 @@ This plugin is a [postcss-import] extension which introduces its own `resolve` o
 
 ### `prefix`
 
-Type: `false` or `string`
+Type: `boolean` or `string`
 Default: `false`
 
 Allows partial-like importing with a prefix before the filename.
