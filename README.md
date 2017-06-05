@@ -24,6 +24,7 @@ to locate it. These can be mixed and matched with normal module paths:
 @import "suitcss-utils-display"; /* node_modules */
 @import "./theme.css"; /* relative path */
 @import "./components/*.css"; /* glob */
+@import "suitcss-utils-size/lib/*.css"; /* glob inside node_modules */
 ```
 
 ## Options

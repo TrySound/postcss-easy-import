@@ -1,5 +1,9 @@
 ### HEAD
 
+### 2.1.0
+
+* Add ability to glob inside `node_modules` and `web_modules` - [#16](https://github.com/TrySound/postcss-easy-import/pull/16)
+
 ### 2.0.0
 
 * Remove `glob` option and infer type of from the import path. Allows a mixture
