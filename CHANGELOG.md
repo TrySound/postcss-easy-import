@@ -1,5 +1,12 @@
 ### HEAD
 
+### 3.0.0
+
+* Update `postcss-import` to `10.0.0`
+* Update `pify` to `3.0.0`
+* Update `is-glob` to `4.0.0`
+* Update `postcss` to `6.0.11`
+
 ### 2.1.0
 
 * Add ability to glob inside `node_modules` and `web_modules` - [#16](https://github.com/TrySound/postcss-easy-import/pull/16)
