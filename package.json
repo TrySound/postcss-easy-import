@@ -30,14 +30,17 @@
     "lodash": "^4.17.4",
     "object-assign": "^4.0.1",
     "pify": "^3.0.0",
-    "postcss": "^6.0.11",
-    "postcss-import": "^11.1.0",
+    "postcss-import": "^14.0.0",
     "resolve": "^1.1.7"
   },
   "devDependencies": {
     "ava": "^0.19.1",
     "eslint": "^3.11.1",
-    "eslint-config-postcss": "^2.0.0"
+    "eslint-config-postcss": "^2.0.0",
+    "postcss": "^8.4.6"
+  },
+  "peerDependencies":{
+    "postcss": "^8.4.6"
   },
   "files": [
     "index.js",
@@ -50,5 +53,8 @@
   },
   "eslintConfig": {
     "extends": "postcss/es5"
+  },
+  "engines": {
+    "node": ">=10.0.0"
   }
 }
