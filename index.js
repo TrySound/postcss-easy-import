@@ -44,9 +44,9 @@ var plugin = opts => {
 
     return {
         postcssPlugin: 'postcss-easy-import',
-        Once(root, rest) {
+        Once(root, options) {
             // eslint-disable-next-line new-cap
-            return postcssImport(opts).Once(root, rest);
+            return postcssImport(opts).Once(root, options);
         }
     };
 };
