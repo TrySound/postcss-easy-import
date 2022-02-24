@@ -1,5 +1,9 @@
 ### HEAD
 
+* Update `postcss` to `^8.4.0` (major)
+* Update `postcss-import` to `^14.0.0` (major)
+* Update minimum Node version to  `>=10.0.0` (major)
+
 ### 3.0.0
 
 * Update `postcss-import` to `10.0.0`
