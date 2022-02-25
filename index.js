@@ -1,4 +1,3 @@
-var postcss = require('postcss');
 var assign = require('object-assign');
 var postcssImport = require('postcss-import');
 var isGlob = require('is-glob');
@@ -10,7 +9,7 @@ function resolve(id) {
     return resolver.apply(null, arguments);
 }
 
-module.exports = postcss.plugin('postcss-easy-import', function (opts) {
+var plugin = opts => {
     opts = assign({
         prefix: false,
         extensions: '.css'
@@ -43,5 +42,15 @@ module.exports = postcss.plugin('postcss-easy-import', function (opts) {
         );
     }
 
-    return postcss([postcssImport(opts)]);
-});
+    return {
+        postcssPlugin: 'postcss-easy-import',
+        Once(root, options) {
+            // eslint-disable-next-line new-cap
+            return postcssImport(opts).Once(root, options);
+        }
+    };
+};
+
+plugin.postcss = true;
+
+module.exports = plugin;
