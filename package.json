@@ -1,6 +1,6 @@
 {
   "name": "postcss-easy-import",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "PostCSS plugin to inline @import rules content with extra features",
   "keywords": [
     "postcss",
